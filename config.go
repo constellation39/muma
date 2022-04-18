@@ -8,9 +8,26 @@ import (
 	"reflect"
 )
 
-func Load(vTarge reflect.Value, path, name string) error {
+type Config struct {
+	Host     string `json:host`
+	Username string `json:username`
+	Password string `json:password`
+}
+
+var config *Config
+
+func init() {
+	config = new(Config)
+	LoadConfig(config)
+}
+
+func LoadConfig(vTarge interface{}) {
+	loadConfig(reflect.ValueOf(vTarge), "", "config.json")
+}
+
+func loadConfig(vTarge reflect.Value, path, name string) error {
 	oTarge := vTarge.Type()
-	if oTarge.Kind() != reflect.Struct {
+	if oTarge.Elem().Kind() != reflect.Struct {
 		return errors.New("type of received parameter is not struct")
 	}
 	data, err := ioutil.ReadFile(filepath.Join(path, name))

@@ -1,13 +1,12 @@
 package muma
 
-import "testing"
-
-type testConfig struct {
-	host     string
-	username string
-	password string
-}
+import (
+	"log"
+	"testing"
+)
 
 func TestLoad(t *testing.T) {
-
+	config := new(Config)
+	LoadConfig(config)
+	log.Printf("%+v", config)
 }
