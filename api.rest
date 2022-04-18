@@ -1,0 +1,371 @@
+@protocol = https
+@hostname = muma.com
+@host = {{protocol}}://{{hostname}}
+@userName = 18990790314
+@password = Thr000625
+
+###
+# @name login
+POST {{host}}/web-gateway/token
+Accept: application/json, text/plain, */*
+Accept-encoding: gzip, deflate, br
+Accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Cache-control: no-cache
+Content-type: application/json;charset=UTF-8
+Dnt: 1
+Origin: {{host}}
+Referer: {{host}}/
+Sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="100", "Microsoft Edge";v="100"
+Sec-ch-ua-mobile: ?0
+Sec-ch-ua-platform: "Windows"
+Sec-fetch-dest: empty
+Sec-fetch-mode: cors
+Sec-fetch-site: same-site
+User-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44
+
+{
+    "equipment": {
+        "deviceBrand": "Chrome",
+        "deviceModel": "100.0.{{$randomInt 4000 6000}}.127",
+        "operationSystem": "Windows 10",
+        "operationSystemVersion": "10.0",
+        "resolutionHeight": 1440,
+        "resolutionWidth": 2560,
+        "serviceProvider": ""
+    },
+    "userName": "{{userName}}",
+    "password": "{{password}}"
+}
+
+@token = {{login.response.body.*}}
+
+###
+# @name recently-work
+GET {{host}}/web-gateway/t/student/recently-work
+Accept: application/json, text/plain, */*
+Accept-encoding: gzip, deflate, br
+Accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: Bearer {{token}}
+Content-type: application/json;charset=UTF-8
+Cache-control: no-cache
+Dnt: 1
+Origin: https://muma.com
+Referer: https://muma.com/
+Sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="100", "Microsoft Edge";v="100"
+Sec-ch-ua-mobile: ?0
+Sec-ch-ua-platform: "Windows"
+Sec-fetch-dest: empty
+Sec-fetch-mode: cors
+Sec-fetch-site: same-site
+User-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44
+
+###
+# @name userInfo
+GET {{host}}/web-gateway/user/userInfo
+Accept: application/json, text/plain, */*
+Accept-encoding: gzip, deflate, br
+Accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: Bearer {{token}}
+Content-type: application/json;charset=UTF-8
+Cache-control: no-cache
+Dnt: 1
+Origin: https://muma.com
+Referer: https://muma.com/
+Sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="100", "Microsoft Edge";v="100"
+Sec-ch-ua-mobile: ?0
+Sec-ch-ua-platform: "Windows"
+Sec-fetch-dest: empty
+Sec-fetch-mode: cors
+Sec-fetch-site: same-site
+User-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44
+
+@userId = {{userInfo.response.body.userBaseDetailInfoDTO.id}}
+@phone = {{userInfo.response.body.userBaseDetailInfoDTO.phone}}
+
+###
+# @name instructor-check
+GET {{host}}/web-gateway/instructor/instructor-check?userId={{userId}}
+Accept: application/json, text/plain, */*
+Accept-encoding: gzip, deflate, br
+Accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: Bearer {{token}}
+Content-type: application/json;charset=UTF-8
+Cache-control: no-cache
+Dnt: 1
+Origin: https://muma.com
+Referer: https://muma.com/
+Sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="100", "Microsoft Edge";v="100"
+Sec-ch-ua-mobile: ?0
+Sec-ch-ua-platform: "Windows"
+Sec-fetch-dest: empty
+Sec-fetch-mode: cors
+Sec-fetch-site: same-site
+User-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44
+
+###
+# @name getUserStatus
+GET {{host}}/web-gateway/teacherAbnormalBehavior/getUserStatus?name={{phone}}
+Accept: application/json, text/plain, */*
+Accept-encoding: gzip, deflate, br
+Accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: Bearer {{token}}
+Content-type: application/json;charset=UTF-8
+Cache-control: no-cache
+Dnt: 1
+Origin: https://muma.com
+Referer: https://muma.com/
+Sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="100", "Microsoft Edge";v="100"
+Sec-ch-ua-mobile: ?0
+Sec-ch-ua-platform: "Windows"
+Sec-fetch-dest: empty
+Sec-fetch-mode: cors
+Sec-fetch-site: same-site
+User-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44
+
+###
+# @name courseRecordInfo
+GET {{host}}/web-gateway/course/courseRecordInfo?pageSize=10&pageNum=1&total=0&orderBy=1&type=1
+Accept: application/json, text/plain, */*
+Accept-encoding: gzip, deflate, br
+Accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: Bearer {{token}}
+Content-type: application/json;charset=UTF-8
+Cache-control: no-cache
+Dnt: 1
+Origin: https://muma.com
+Referer: https://muma.com/
+Sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="100", "Microsoft Edge";v="100"
+Sec-ch-ua-mobile: ?0
+Sec-ch-ua-platform: "Windows"
+Sec-fetch-dest: empty
+Sec-fetch-mode: cors
+Sec-fetch-site: same-site
+User-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44
+
+@courseId = 1193
+
+###
+# @name loginOut
+GET {{host}}/web-gateway/user/loginOut
+Accept: application/json, text/plain, */*
+Accept-encoding: gzip, deflate, br
+Accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: Bearer {{token}}
+Content-type: application/json;charset=UTF-8
+Cache-control: no-cache
+Dnt: 1
+Origin: https://muma.com
+Referer: https://muma.com/
+Sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="100", "Microsoft Edge";v="100"
+Sec-ch-ua-mobile: ?0
+Sec-ch-ua-platform: "Windows"
+Sec-fetch-dest: empty
+Sec-fetch-mode: cors
+Sec-fetch-site: same-site
+User-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44
+
+###
+# @name authorization
+GET {{host}}/web-gateway/course-permission/user/authorization?courseId={{courseId}}&userId={{userId}}
+Accept: application/json, text/plain, */*
+Accept-encoding: gzip, deflate, br
+Accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: Bearer {{token}}
+Content-type: application/json;charset=UTF-8
+Cache-control: no-cache
+Dnt: 1
+Origin: https://muma.com
+Referer: https://muma.com/
+Sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="100", "Microsoft Edge";v="100"
+Sec-ch-ua-mobile: ?0
+Sec-ch-ua-platform: "Windows"
+Sec-fetch-dest: empty
+Sec-fetch-mode: cors
+Sec-fetch-site: same-site
+User-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44
+
+###
+# @name courseRecord
+GET {{host}}/web-gateway/user/courseRecord?courseId={{courseId}}
+Accept: application/json, text/plain, */*
+Accept-encoding: gzip, deflate, br
+Accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: Bearer {{token}}
+Content-type: application/json;charset=UTF-8
+Cache-control: no-cache
+Dnt: 1
+Origin: https://muma.com
+Referer: https://muma.com/
+Sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="100", "Microsoft Edge";v="100"
+Sec-ch-ua-mobile: ?0
+Sec-ch-ua-platform: "Windows"
+Sec-fetch-dest: empty
+Sec-fetch-mode: cors
+Sec-fetch-site: same-site
+User-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44
+
+### 学习任务
+# @name courseSection
+GET {{host}}/web-gateway/user/courseSection?courseId={{courseId}}
+Accept: application/json, text/plain, */*
+Accept-encoding: gzip, deflate, br
+Accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: Bearer {{token}}
+Content-type: application/json;charset=UTF-8
+Cache-control: no-cache
+Dnt: 1
+Origin: https://muma.com
+Referer: https://muma.com/
+Sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="100", "Microsoft Edge";v="100"
+Sec-ch-ua-mobile: ?0
+Sec-ch-ua-platform: "Windows"
+Sec-fetch-dest: empty
+Sec-fetch-mode: cors
+Sec-fetch-site: same-site
+User-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44
+
+###
+# @name allCourseSection
+GET {{host}}/web-gateway/courseSection/allCourseSection?courseId={{courseId}}
+Accept: application/json, text/plain, */*
+Accept-encoding: gzip, deflate, br
+Accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-type: application/json;charset=UTF-8
+Authorization: Bearer {{token}}
+Cache-control: no-cache
+Dnt: 1
+Origin: https://muma.com
+Referer: https://muma.com/
+Sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="100", "Microsoft Edge";v="100"
+Sec-ch-ua-mobile: ?0
+Sec-ch-ua-platform: "Windows"
+Sec-fetch-dest: empty
+Sec-fetch-mode: cors
+Sec-fetch-site: same-site
+User-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44
+
+#   {
+#         "id": 11580,
+#         "courseId": null,
+#         "sectionId": null,
+#         "seqNo": 17,
+#         "name": "无穷小无穷大",
+#         "duration": 2746,
+#         "progress": null,
+#         "status": null,
+#         "learnStatus": 3,
+#         "subjectPointList": [
+#           {
+#             "id": 11582,
+#             "sectionId": null,
+#             "subjectId": 11580,
+#             "seqNo": null,
+#             "name": "无穷小无穷大-1",
+#             "duration": 1225,
+#             "progress": null,
+#             "videoId": 12652,
+#             "pointVideos": [
+#               {
+#                 "id": 12652,
+#                 "pointId": 11582,
+#                 "seqNo": null,
+#                 "name": "21-无穷小与无穷大上.mp4",
+#                 "fileUrl": "e1c40676f4264d11adb96385eb074b6b",
+#                 "duration": "00:20:25",
+#                 "status": 1,
+#                 "description": null,
+#                 "checkPoint": null,
+#                 "isLearning": null,
+#                 "questionDTO": null,
+#                 "pointExercise": null,
+#                 "subjectLike": null,
+#                 "totalTime": "00:20:25",
+#                 "collect": null
+#               }
+#             ]
+#           },
+#           {
+#             "id": 11583,
+#             "sectionId": null,
+#             "subjectId": 11580,
+#             "seqNo": null,
+#             "name": "无穷小无穷大-2",
+#             "duration": 1521,
+#             "progress": null,
+#             "videoId": 12653,
+#             "pointVideos": [
+#               {
+#                 "id": 12653,
+#                 "pointId": 11583,
+#                 "seqNo": null,
+#                 "name": "21-无穷小与无穷大下.mp4",
+#                 "fileUrl": "94d80267b1374e398f8521c64aa6376c",
+#                 "duration": "00:25:21",
+#                 "status": 1,
+#                 "description": null,
+#                 "checkPoint": null,
+#                 "isLearning": null,
+#                 "questionDTO": null,
+#                 "pointExercise": null,
+#                 "subjectLike": null,
+#                 "totalTime": "00:25:21",
+#                 "collect": null
+#               }
+#             ]
+#           }
+#         ],
+#         "subjectExercise": null,
+#         "subjectData": null
+#       },
+
+# {
+#     "courseId": 1193,
+#     "subjectId": "11580",
+#     "videoId": 12653
+# }
+
+###
+# @name learnedVideo
+POST {{host}}/web-gateway/user/learnedVideo
+Accept: application/json, text/plain, */*
+Accept-encoding: gzip, deflate, br
+Accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: Bearer {{token}}
+Content-type: application/json;charset=UTF-8
+Cache-control: no-cache
+Dnt: 1
+Origin: https://muma.com
+Referer: https://muma.com/
+Sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="100", "Microsoft Edge";v="100"
+Sec-ch-ua-mobile: ?0
+Sec-ch-ua-platform: "Windows"
+Sec-fetch-dest: empty
+Sec-fetch-mode: cors
+Sec-fetch-site: same-site
+User-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44
+
+{
+    "courseId": 1193,
+    "subjectId": "11581",
+    "videoId": 12654
+}
+
+###
+# @name courseDetail
+GET {{host}}/web-gateway/course/courseDetail?courseId={{courseId}}
+Accept: application/json, text/plain, */*
+Accept-encoding: gzip, deflate, br
+Accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: Bearer {{token}}
+Content-type: application/json;charset=UTF-8
+Cache-control: no-cache
+Dnt: 1
+Origin: https://muma.com
+Referer: https://muma.com/
+Sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="100", "Microsoft Edge";v="100"
+Sec-ch-ua-mobile: ?0
+Sec-ch-ua-platform: "Windows"
+Sec-fetch-dest: empty
+Sec-fetch-mode: cors
+Sec-fetch-site: same-site
+User-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44
