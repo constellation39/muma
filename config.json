@@ -1,5 +1,7 @@
 {
-    "host": "127.0.0.1",
+    "debug": true,
+    "log": 1,
+    "host": "muma.com",
     "username": "17780508348",
-    "password": "bahco39.."
+    "password": "bahco39"
 }

@@ -1,0 +1,12 @@
+2022-04-19T15:05:22.716+0800	DEBUG	main/main.go:19	Hello world
+2022-04-19T15:06:04.153+0800	DEBUG	main/main.go:43	Login	{"username": "17780508348", "password": "miku39"}
+2022-04-19T15:06:04.524+0800	DEBUG	main/main.go:77	RecentlyWork
+2022-04-19T15:06:04.731+0800	DEBUG	main/main.go:89	RecentlyWork	{"scRecentlyWork": {"code":200,"msg":"success","data":{"time":1623916082000,"className":"19软件4班","courseName":null}}}
+2022-04-19T15:06:04.731+0800	DEBUG	main/main.go:99	LoginOut
+2022-04-19T15:06:04.929+0800	DEBUG	main/main.go:111	LoginOut	{"scLoginOut": {"code":200,"msg":"success","data":null}}
+2022-04-19T17:10:44.781+0800	DEBUG	main/main.go:43	Login	{"username": "17780508348", "password": "miku39"}
+2022-04-19T17:10:45.385+0800	DEBUG	main/main.go:88	RecentlyWork	{"scRecentlyWork": {"code":200,"msg":"success","data":{"time":1623916082000,"className":"19软件4班","courseName":null}}}
+2022-04-19T17:10:45.591+0800	DEBUG	main/main.go:110	LoginOut	{"scLoginOut": {"code":200,"msg":"success","data":null}}
+2022-04-19T17:24:06.543+0800	DEBUG	main/main.go:44	Login	{"id": "d38e52fa-1436-4c88-a380-754137f53b2d", "username": "17780508348", "password": "miku39"}
+2022-04-19T17:24:07.129+0800	DEBUG	main/main.go:90	RecentlyWork	{"id": "d38e52fa-1436-4c88-a380-754137f53b2d", "scRecentlyWork": {"code":200,"msg":"success","data":{"time":1623916082000,"className":"19软件4班","courseName":null}}}
+2022-04-19T17:24:07.341+0800	DEBUG	main/main.go:113	LoginOut	{"id": "d38e52fa-1436-4c88-a380-754137f53b2d", "scLoginOut": {"code":200,"msg":"success","data":null}}

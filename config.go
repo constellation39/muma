@@ -8,10 +8,14 @@ import (
 	"reflect"
 )
 
+// Config 只读线程安全
 type Config struct {
-	Host     string `json:host`
-	Username string `json:username`
-	Password string `json:password`
+	Debug    bool   `json:"debug"`
+	Log      int    `json:"log"`
+	Host     string `json:"host"`
+	Username string `json:"username"`
+	Password string `json:"password"`
+	TimeOut  int    `json:"timeOut"`
 }
 
 var config *Config
