@@ -1,7 +1,7 @@
 {
     "debug": true,
     "log": 1,
-    "speed": 100,
+    "speed": 1,
     "userConfig": "user",
     "host": "https://muma.com"
 }
