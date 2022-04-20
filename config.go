@@ -4,37 +4,42 @@ import (
 	"encoding/json"
 	"errors"
 	"io/ioutil"
-	"path/filepath"
 	"reflect"
 )
 
 // Config 只读线程安全
-type Config struct {
-	Debug    bool   `json:"debug"`
-	Log      int    `json:"log"`
-	Host     string `json:"host"`
+type globalConfig struct {
+	Debug      bool   `json:"debug"`
+	Log        int    `json:"log"`
+	Host       string `json:"host"`
+	UserConfig string `json:"userConfig"`
+	TimeOut    int    `json:"timeOut"`
+}
+
+type UserConfig struct {
 	Username string `json:"username"`
 	Password string `json:"password"`
-	TimeOut  int    `json:"timeOut"`
 }
 
-var config *Config
+var GlobalConfig *globalConfig
 
 func init() {
-	config = new(Config)
-	LoadConfig(config)
+	GlobalConfig = new(globalConfig)
+	if err := LoadConfig("config.json", GlobalConfig); err != nil {
+		panic(err)
+	}
 }
 
-func LoadConfig(vTarge interface{}) {
-	loadConfig(reflect.ValueOf(vTarge), "", "config.json")
+func LoadConfig(path string, vTarge interface{}) error {
+	return loadConfig(reflect.ValueOf(vTarge), path)
 }
 
-func loadConfig(vTarge reflect.Value, path, name string) error {
+func loadConfig(vTarge reflect.Value, path string) error {
 	oTarge := vTarge.Type()
 	if oTarge.Elem().Kind() != reflect.Struct {
 		return errors.New("type of received parameter is not struct")
 	}
-	data, err := ioutil.ReadFile(filepath.Join(path, name))
+	data, err := ioutil.ReadFile(path)
 	if err != nil {
 		return err
 	}

@@ -10,3 +10,321 @@
 2022-04-19T17:24:06.543+0800	DEBUG	main/main.go:44	Login	{"id": "d38e52fa-1436-4c88-a380-754137f53b2d", "username": "17780508348", "password": "miku39"}
 2022-04-19T17:24:07.129+0800	DEBUG	main/main.go:90	RecentlyWork	{"id": "d38e52fa-1436-4c88-a380-754137f53b2d", "scRecentlyWork": {"code":200,"msg":"success","data":{"time":1623916082000,"className":"19软件4班","courseName":null}}}
 2022-04-19T17:24:07.341+0800	DEBUG	main/main.go:113	LoginOut	{"id": "d38e52fa-1436-4c88-a380-754137f53b2d", "scLoginOut": {"code":200,"msg":"success","data":null}}
+2022-04-20T12:20:57.471+0800	ERROR	main/main.go:31	ReadConfig	{"path": "", "Error": {"Op":"Lstat","Path":"","Err":3}}
+main.ReadConfig.func1
+	c:/Users/const/Desktop/muma/main/main.go:31
+path/filepath.Walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:503
+main.ReadConfig
+	c:/Users/const/Desktop/muma/main/main.go:29
+main.main
+	c:/Users/const/Desktop/muma/main/main.go:23
+runtime.main
+	C:/Users/const/scoop/apps/go/current/src/runtime/proc.go:255
+2022-04-20T12:23:53.214+0800	ERROR	main/main.go:31	ReadConfig	{"path": "", "Error": {"Op":"Lstat","Path":"","Err":3}}
+main.ReadConfig.func1
+	c:/Users/const/Desktop/muma/main/main.go:31
+path/filepath.Walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:503
+main.ReadConfig
+	c:/Users/const/Desktop/muma/main/main.go:29
+main.main
+	c:/Users/const/Desktop/muma/main/main.go:23
+runtime.main
+	C:/Users/const/scoop/apps/go/current/src/runtime/proc.go:255
+2022-04-20T12:27:44.893+0800	ERROR	main/main.go:36	NewUser Failed	{"path": "user", "Error": {"Op":"read","Path":"user","Err":6}}
+main.ReadConfig.func1
+	c:/Users/const/Desktop/muma/main/main.go:36
+path/filepath.walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:422
+path/filepath.Walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:505
+main.ReadConfig
+	c:/Users/const/Desktop/muma/main/main.go:29
+main.main
+	c:/Users/const/Desktop/muma/main/main.go:23
+runtime.main
+	C:/Users/const/scoop/apps/go/current/src/runtime/proc.go:255
+2022-04-20T12:29:07.177+0800	ERROR	main/main.go:36	NewUser Failed	{"path": "user", "Error": {"Op":"read","Path":"user","Err":6}}
+main.ReadConfig.func1
+	c:/Users/const/Desktop/muma/main/main.go:36
+path/filepath.walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:422
+path/filepath.Walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:505
+main.ReadConfig
+	c:/Users/const/Desktop/muma/main/main.go:29
+main.main
+	c:/Users/const/Desktop/muma/main/main.go:23
+runtime.main
+	C:/Users/const/scoop/apps/go/current/src/runtime/proc.go:255
+2022-04-20T12:29:28.450+0800	ERROR	main/main.go:36	NewUser Failed	{"path": "user", "Error": {"Op":"read","Path":"user","Err":6}}
+main.ReadConfig.func1
+	c:/Users/const/Desktop/muma/main/main.go:36
+path/filepath.walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:422
+path/filepath.Walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:505
+main.ReadConfig
+	c:/Users/const/Desktop/muma/main/main.go:29
+main.main
+	c:/Users/const/Desktop/muma/main/main.go:23
+runtime.main
+	C:/Users/const/scoop/apps/go/current/src/runtime/proc.go:255
+2022-04-20T12:30:24.063+0800	ERROR	main/main.go:30	err	{"err": null}
+main.ReadConfig.func1
+	c:/Users/const/Desktop/muma/main/main.go:30
+path/filepath.walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:422
+path/filepath.Walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:505
+main.ReadConfig
+	c:/Users/const/Desktop/muma/main/main.go:29
+main.main
+	c:/Users/const/Desktop/muma/main/main.go:23
+runtime.main
+	C:/Users/const/scoop/apps/go/current/src/runtime/proc.go:255
+2022-04-20T12:30:24.075+0800	ERROR	main/main.go:30	err	{"err": null}
+main.ReadConfig.func1
+	c:/Users/const/Desktop/muma/main/main.go:30
+path/filepath.walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:418
+path/filepath.walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:442
+path/filepath.Walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:505
+main.ReadConfig
+	c:/Users/const/Desktop/muma/main/main.go:29
+main.main
+	c:/Users/const/Desktop/muma/main/main.go:23
+runtime.main
+	C:/Users/const/scoop/apps/go/current/src/runtime/proc.go:255
+2022-04-20T12:30:47.681+0800	ERROR	main/main.go:30	Walk	{"path": "user", "err": null}
+main.ReadConfig.func1
+	c:/Users/const/Desktop/muma/main/main.go:30
+path/filepath.walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:422
+path/filepath.Walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:505
+main.ReadConfig
+	c:/Users/const/Desktop/muma/main/main.go:29
+main.main
+	c:/Users/const/Desktop/muma/main/main.go:23
+runtime.main
+	C:/Users/const/scoop/apps/go/current/src/runtime/proc.go:255
+2022-04-20T12:30:47.694+0800	ERROR	main/main.go:30	Walk	{"path": "user\\huangjia.json", "err": null}
+main.ReadConfig.func1
+	c:/Users/const/Desktop/muma/main/main.go:30
+path/filepath.walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:418
+path/filepath.walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:442
+path/filepath.Walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:505
+main.ReadConfig
+	c:/Users/const/Desktop/muma/main/main.go:29
+main.main
+	c:/Users/const/Desktop/muma/main/main.go:23
+runtime.main
+	C:/Users/const/scoop/apps/go/current/src/runtime/proc.go:255
+2022-04-20T13:17:32.375+0800	ERROR	main/main.go:33	Walk	{"path": "user\\huangjia.json", "err": null}
+main.ReadConfig.func1
+	c:/Users/const/Desktop/muma/main/main.go:33
+path/filepath.walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:418
+path/filepath.walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:442
+path/filepath.Walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:505
+main.ReadConfig
+	c:/Users/const/Desktop/muma/main/main.go:29
+main.main
+	c:/Users/const/Desktop/muma/main/main.go:23
+runtime.main
+	C:/Users/const/scoop/apps/go/current/src/runtime/proc.go:255
+2022-04-20T13:18:01.553+0800	INFO	main/main.go:43	NewUser	{"UUID": "0a76f6bf-7897-4108-a142-e624a083aa25", "Token": "", "UserId": 0, "Phone": ""}
+2022-04-20T13:18:57.547+0800	INFO	main/main.go:43	NewUser	{"Config": {"username":"17780508348","Password":""}, "UUID": "df3a81d7-be9e-427e-82d6-953ca084eac2", "Token": "", "UserId": 0, "Phone": ""}
+2022-04-20T13:19:38.719+0800	INFO	main/main.go:43	NewUser	{"Config": {"username":"17780508348","password":""}, "UUID": "f33b5702-720d-4e63-9978-b6f3db47ce25", "Token": "", "UserId": 0, "Phone": ""}
+2022-04-20T13:20:24.493+0800	INFO	main/main.go:44	NewUser	{"Config": {"username":"17780508348","password":"miku39"}, "UUID": "df2a1525-f5c1-4116-946b-62499a980a1e", "Token": "", "UserId": 0, "Phone": ""}
+2022-04-20T13:20:56.616+0800	INFO	main/main.go:44	NewUser	{"Config": {"username":"17780508348","password":"miku39"}, "State": 0, "UUID": "2088bf7f-d354-4c93-9c7c-acef95782fac", "Token": "", "UserId": 0, "Phone": ""}
+2022-04-20T13:22:13.932+0800	INFO	main/main.go:44	NewUser	{"Config": {"username":"17780508348","password":"miku39"}, "State": 0, "UUID": "7d182bac-e0a7-4668-90a2-d537b220c11a", "Token": "", "UserId": 0, "Phone": ""}
+2022-04-20T14:04:02.108+0800	INFO	main/main.go:75	NewUser	{"Config": {"username":"17780508348","password":"miku39"}, "State": 0, "UUID": "e882041e-1e1a-4649-8b96-962966ec4883", "Token": "", "UserId": 0, "Phone": ""}
+2022-04-20T14:20:18.338+0800	INFO	main/main.go:76	NewUser	{"Config": {"username":"17780508348","password":"miku39"}, "State": 0, "UUID": "ad623615-ae97-4cab-b796-97ae379d148a", "Token": "", "UserId": 0, "Phone": ""}
+2022-04-20T14:20:20.357+0800	ERROR	muma/user.go:91	Login	{"Config": {"username":"17780508348","password":"miku39"}, "State": 1, "UUID": "ad623615-ae97-4cab-b796-97ae379d148a", "Token": "", "UserId": 0, "Phone": "", "err": {"Op":"Post","URL":"muma.com/web-gateway/token","Err":{}}}
+muma.(*User).Login
+	c:/Users/const/Desktop/muma/user.go:91
+main.Run
+	c:/Users/const/Desktop/muma/main/main.go:47
+main.Loop
+	c:/Users/const/Desktop/muma/main/main.go:37
+main.NewUser
+	c:/Users/const/Desktop/muma/main/main.go:77
+main.ReadConfig.func1
+	c:/Users/const/Desktop/muma/main/main.go:102
+path/filepath.walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:418
+path/filepath.walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:442
+path/filepath.Walk
+	C:/Users/const/scoop/apps/go/current/src/path/filepath/path.go:505
+main.ReadConfig
+	c:/Users/const/Desktop/muma/main/main.go:94
+main.main
+	c:/Users/const/Desktop/muma/main/main.go:27
+runtime.main
+	C:/Users/const/scoop/apps/go/current/src/runtime/proc.go:255
+2022-04-20T14:21:09.335+0800	INFO	main/main.go:76	NewUser	{"Config": {"username":"17780508348","password":"miku39"}, "State": 0, "UUID": "e9087989-5057-455b-88dc-d8c7a7d9f845", "Token": "", "UserId": 0, "Phone": ""}
+2022-04-20T14:21:11.355+0800	ERROR	muma/user.go:91	Login	{"Config": {"username":"17780508348","password":"miku39"}, "State": 1, "UUID": "e9087989-5057-455b-88dc-d8c7a7d9f845", "Token": "", "UserId": 0, "Phone": "", "err": {"Op":"Post","URL":"muma.com/web-gateway/token","Err":{}}}
+muma.(*User).Login
+	c:/Users/const/Desktop/muma/user.go:91
+main.Run
+	c:/Users/const/Desktop/muma/main/main.go:47
+main.Loop
+	c:/Users/const/Desktop/muma/main/main.go:37
+2022-04-20T14:21:28.872+0800	INFO	main/main.go:76	NewUser	{"Config": {"username":"17780508348","password":"miku39"}, "State": 0, "UUID": "439ac956-14d2-4b5d-abab-d5f15d04a96a", "Token": "", "UserId": 0, "Phone": ""}
+2022-04-20T14:22:21.223+0800	INFO	main/main.go:76	NewUser	{"Config": {"username":"17780508348","password":"miku39"}, "State": 0, "UUID": "e90fd846-1cd9-484b-af2a-5b8f789ef94c", "Token": "", "UserId": 0, "Phone": ""}
+2022-04-20T14:22:26.741+0800	DEBUG	muma/user.go:98	Login Success	{"Config": {"username":"17780508348","password":"miku39"}, "State": 2, "UUID": "e90fd846-1cd9-484b-af2a-5b8f789ef94c", "Token": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNzc4MDUwODM0OCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM1NzQ2LCJleHAiOjE2NTEwNDA1NDZ9.cG3bDBh1jIeHv9xKh0Xre8KUiCLHNMq3_5P-AszLVd4", "UserId": 0, "Phone": ""}
+2022-04-20T14:22:26.968+0800	ERROR	muma/user.go:338	CourseRecordInfo Failed	{"Config": {"username":"17780508348","password":"miku39"}, "State": 2, "UUID": "e90fd846-1cd9-484b-af2a-5b8f789ef94c", "Token": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNzc4MDUwODM0OCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM1NzQ2LCJleHAiOjE2NTEwNDA1NDZ9.cG3bDBh1jIeHv9xKh0Xre8KUiCLHNMq3_5P-AszLVd4", "UserId": 0, "Phone": "", "err": {"Offset":0}}
+muma.(*User).CourseRecordInfo
+	c:/Users/const/Desktop/muma/user.go:338
+main.Run
+	c:/Users/const/Desktop/muma/main/main.go:49
+main.Loop
+	c:/Users/const/Desktop/muma/main/main.go:37
+2022-04-20T14:22:28.272+0800	ERROR	muma/user.go:338	CourseRecordInfo Failed	{"Config": {"username":"17780508348","password":"miku39"}, "State": 2, "UUID": "e90fd846-1cd9-484b-af2a-5b8f789ef94c", "Token": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNzc4MDUwODM0OCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM1NzQ2LCJleHAiOjE2NTEwNDA1NDZ9.cG3bDBh1jIeHv9xKh0Xre8KUiCLHNMq3_5P-AszLVd4", "UserId": 0, "Phone": "", "err": {"Offset":0}}
+muma.(*User).CourseRecordInfo
+	c:/Users/const/Desktop/muma/user.go:338
+main.Run
+	c:/Users/const/Desktop/muma/main/main.go:49
+main.Loop
+	c:/Users/const/Desktop/muma/main/main.go:37
+2022-04-20T14:22:29.345+0800	ERROR	muma/user.go:338	CourseRecordInfo Failed	{"Config": {"username":"17780508348","password":"miku39"}, "State": 2, "UUID": "e90fd846-1cd9-484b-af2a-5b8f789ef94c", "Token": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNzc4MDUwODM0OCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM1NzQ2LCJleHAiOjE2NTEwNDA1NDZ9.cG3bDBh1jIeHv9xKh0Xre8KUiCLHNMq3_5P-AszLVd4", "UserId": 0, "Phone": "", "err": {"Offset":0}}
+muma.(*User).CourseRecordInfo
+	c:/Users/const/Desktop/muma/user.go:338
+main.Run
+	c:/Users/const/Desktop/muma/main/main.go:49
+main.Loop
+	c:/Users/const/Desktop/muma/main/main.go:37
+2022-04-20T14:22:31.455+0800	ERROR	muma/user.go:338	CourseRecordInfo Failed	{"Config": {"username":"17780508348","password":"miku39"}, "State": 2, "UUID": "e90fd846-1cd9-484b-af2a-5b8f789ef94c", "Token": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNzc4MDUwODM0OCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM1NzQ2LCJleHAiOjE2NTEwNDA1NDZ9.cG3bDBh1jIeHv9xKh0Xre8KUiCLHNMq3_5P-AszLVd4", "UserId": 0, "Phone": "", "err": {"Offset":0}}
+muma.(*User).CourseRecordInfo
+	c:/Users/const/Desktop/muma/user.go:338
+main.Run
+	c:/Users/const/Desktop/muma/main/main.go:49
+main.Loop
+	c:/Users/const/Desktop/muma/main/main.go:37
+2022-04-20T14:24:38.961+0800	INFO	main/main.go:77	NewUser	{"Config": {"username":"17780508348","password":"miku39"}, "State": 0, "UUID": "004c202d-e793-42ab-ae34-8a2dc3fd90b3", "Token": "", "UserId": 0, "Phone": ""}
+2022-04-20T14:24:44.476+0800	DEBUG	muma/user.go:98	Login Success	{"Config": {"username":"17780508348","password":"miku39"}, "State": 2, "UUID": "004c202d-e793-42ab-ae34-8a2dc3fd90b3", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNzc4MDUwODM0OCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM1ODg0LCJleHAiOjE2NTEwNDA2ODR9.rUooBeRG5RPWqo_UVEH4s5FEmuFwM_Kt-iNB5QlD3JM", "UserId": 0, "Phone": ""}
+2022-04-20T14:32:03.749+0800	DEBUG	main/main.go:27	user	{"user": {"Config":{"username":"17780508348","password":"miku39"},"State":0,"UUID":"e03f20b7-67fa-4aa1-9ca4-c96adf97d37d","Token":"","UserId":0,"Phone":""}}
+2022-04-20T14:36:09.900+0800	DEBUG	main/main.go:27	user	{"user": {"Config":{"username":"17780508348","password":"miku39"},"State":0,"UUID":"90583161-e4b5-4dab-874f-b24e91f5db96","Token":"","UserId":0,"Phone":""}}
+2022-04-20T14:36:10.272+0800	DEBUG	muma/user.go:98	Login Success	{"Config": {"username":"17780508348","password":"miku39"}, "State": 2, "UUID": "90583161-e4b5-4dab-874f-b24e91f5db96", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNzc4MDUwODM0OCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM2NTcwLCJleHAiOjE2NTEwNDEzNzB9.oKMDEcv5Y8FK-QPiLlxInkYSQ5cjLlRYVlij0tgeIuE", "UserId": 0, "Phone": ""}
+2022-04-20T14:36:13.570+0800	ERROR	muma/user.go:338	CourseRecordInfo Failed	{"Config": {"username":"17780508348","password":"miku39"}, "State": 2, "UUID": "90583161-e4b5-4dab-874f-b24e91f5db96", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNzc4MDUwODM0OCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM2NTcwLCJleHAiOjE2NTEwNDEzNzB9.oKMDEcv5Y8FK-QPiLlxInkYSQ5cjLlRYVlij0tgeIuE", "UserId": 0, "Phone": "", "err": {"Offset":0}}
+muma.(*User).CourseRecordInfo
+	c:/Users/const/Desktop/muma/user.go:338
+main.main
+	c:/Users/const/Desktop/muma/main/main.go:30
+runtime.main
+	C:/Users/const/scoop/apps/go/current/src/runtime/proc.go:255
+2022-04-20T14:36:31.303+0800	DEBUG	main/main.go:27	user	{"user": {"Config":{"username":"17780508348","password":"miku39"},"State":0,"UUID":"c502731f-53b4-4722-9377-df55ca818d81","Token":"","UserId":0,"Phone":""}}
+2022-04-20T14:36:31.681+0800	DEBUG	muma/user.go:98	Login Success	{"Config": {"username":"17780508348","password":"miku39"}, "State": 2, "UUID": "c502731f-53b4-4722-9377-df55ca818d81", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNzc4MDUwODM0OCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM2NTkxLCJleHAiOjE2NTEwNDEzOTF9.KGj4z4TlmWERqqsDSqYOu6y58VMIuez4FHV42gFhYms", "UserId": 0, "Phone": ""}
+2022-04-20T14:36:43.647+0800	DEBUG	main/main.go:27	user	{"user": {"Config":{"username":"17780508348","password":"miku39"},"State":0,"UUID":"03468ecc-e416-41d3-b3a6-7b4f9f4d8f9c","Token":"","UserId":0,"Phone":""}}
+2022-04-20T14:36:44.029+0800	DEBUG	muma/user.go:98	Login Success	{"Config": {"username":"17780508348","password":"miku39"}, "State": 2, "UUID": "03468ecc-e416-41d3-b3a6-7b4f9f4d8f9c", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNzc4MDUwODM0OCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM2NjAzLCJleHAiOjE2NTEwNDE0MDN9.97JN1Dzuu4D_wq7B8TKhg77Sg7NzFshwYzs2yQj3FLY", "UserId": 0, "Phone": ""}
+2022-04-20T14:42:44.230+0800	DEBUG	main/main.go:27	user	{"user": {"Config":{"username":"17780508348","password":"miku39"},"State":0,"UUID":"22ece3f5-c00d-4da5-8792-bba01040bd40","Token":"","UserId":0,"Phone":""}}
+2022-04-20T14:42:44.616+0800	DEBUG	muma/user.go:98	Login Success	{"Config": {"username":"17780508348","password":"miku39"}, "State": 2, "UUID": "22ece3f5-c00d-4da5-8792-bba01040bd40", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNzc4MDUwODM0OCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM2OTY0LCJleHAiOjE2NTEwNDE3NjR9.JGsO_g837rWUKPTlR1I8ScZnzwpxjnBZ36_4STtC-5g", "UserId": 0, "Phone": ""}
+2022-04-20T14:42:44.870+0800	ERROR	muma/user.go:338	CourseRecordInfo Failed	{"Config": {"username":"17780508348","password":"miku39"}, "State": 2, "UUID": "22ece3f5-c00d-4da5-8792-bba01040bd40", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNzc4MDUwODM0OCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM2OTY0LCJleHAiOjE2NTEwNDE3NjR9.JGsO_g837rWUKPTlR1I8ScZnzwpxjnBZ36_4STtC-5g", "UserId": 0, "Phone": "", "err": {"Offset":0}}
+muma.(*User).CourseRecordInfo
+	c:/Users/const/Desktop/muma/user.go:338
+main.main
+	c:/Users/const/Desktop/muma/main/main.go:30
+runtime.main
+	C:/Users/const/scoop/apps/go/current/src/runtime/proc.go:255
+2022-04-20T14:43:12.848+0800	DEBUG	main/main.go:27	user	{"user": {"Config":{"username":"17780508348","password":"miku39"},"State":0,"UUID":"395f0b4d-623a-4495-9e19-96533a8a6947","Token":"","UserId":0,"Phone":""}}
+2022-04-20T14:43:13.233+0800	DEBUG	muma/user.go:98	Login Success	{"Config": {"username":"17780508348","password":"miku39"}, "State": 2, "UUID": "395f0b4d-623a-4495-9e19-96533a8a6947", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNzc4MDUwODM0OCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM2OTkzLCJleHAiOjE2NTEwNDE3OTN9.osTVsLtVgVtdQR9kCk3CTUwq0AtZ_K_ukgIf3M1JrK0", "UserId": 0, "Phone": ""}
+2022-04-20T14:43:13.436+0800	ERROR	muma/user.go:338	CourseRecordInfo Failed	{"Config": {"username":"17780508348","password":"miku39"}, "State": 2, "UUID": "395f0b4d-623a-4495-9e19-96533a8a6947", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNzc4MDUwODM0OCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM2OTkzLCJleHAiOjE2NTEwNDE3OTN9.osTVsLtVgVtdQR9kCk3CTUwq0AtZ_K_ukgIf3M1JrK0", "UserId": 0, "Phone": "", "err": {"Offset":0}}
+muma.(*User).CourseRecordInfo
+	c:/Users/const/Desktop/muma/user.go:338
+main.main
+	c:/Users/const/Desktop/muma/main/main.go:30
+runtime.main
+	C:/Users/const/scoop/apps/go/current/src/runtime/proc.go:255
+2022-04-20T14:43:13.437+0800	DEBUG	main/main.go:31	scCourseRecordInfo	{"scCourseRecordInfo": null}
+2022-04-20T14:43:13.913+0800	DEBUG	muma/user.go:493	LoginOut Success	{"id": "395f0b4d-623a-4495-9e19-96533a8a6947", "SCLoginOut": {"code":200,"msg":"success","data":null}}
+2022-04-20T14:43:35.134+0800	DEBUG	main/main.go:27	user	{"user": {"Config":{"username":"17780508348","password":"miku39"},"State":0,"UUID":"6830cf9d-6a05-4318-be46-292c5fa8cfe0","Token":"","UserId":0,"Phone":""}}
+2022-04-20T14:43:35.493+0800	DEBUG	muma/user.go:98	Login Success	{"Config": {"username":"17780508348","password":"miku39"}, "State": 2, "UUID": "6830cf9d-6a05-4318-be46-292c5fa8cfe0", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNzc4MDUwODM0OCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM3MDE1LCJleHAiOjE2NTEwNDE4MTV9.pWSvP6D7VKRLiAt177YFXr8i0YiS5oixhMGDaV2tzL4", "UserId": 0, "Phone": ""}
+2022-04-20T14:51:26.127+0800	DEBUG	main/main.go:27	user	{"user": {"Config":{"username":"18990790314","password":"Thr000625"},"State":0,"UUID":"95991451-b9f0-42ab-999d-006edac60f87","Token":"","UserId":0,"Phone":""}}
+2022-04-20T14:51:26.570+0800	DEBUG	muma/user.go:98	Login Success	{"Config": {"username":"18990790314","password":"Thr000625"}, "State": 2, "UUID": "95991451-b9f0-42ab-999d-006edac60f87", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxODk5MDc5MDMxNCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM3NDg2LCJleHAiOjE2NTEwNDIyODZ9.ICfNAqOBCm4dRP-jESD8dAxcOfkHvpHLbxNQYN_3GHE", "UserId": 0, "Phone": ""}
+2022-04-20T14:51:28.663+0800	ERROR	muma/user.go:338	CourseRecordInfo Failed	{"Config": {"username":"18990790314","password":"Thr000625"}, "State": 2, "UUID": "95991451-b9f0-42ab-999d-006edac60f87", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxODk5MDc5MDMxNCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM3NDg2LCJleHAiOjE2NTEwNDIyODZ9.ICfNAqOBCm4dRP-jESD8dAxcOfkHvpHLbxNQYN_3GHE", "UserId": 0, "Phone": "", "err": {"Offset":1}}
+muma.(*User).CourseRecordInfo
+	c:/Users/const/Desktop/muma/user.go:338
+main.main
+	c:/Users/const/Desktop/muma/main/main.go:30
+runtime.main
+	C:/Users/const/scoop/apps/go/current/src/runtime/proc.go:255
+2022-04-20T14:51:38.028+0800	DEBUG	main/main.go:27	user	{"user": {"Config":{"username":"18990790314","password":"Thr000625"},"State":0,"UUID":"e6ed4dc1-041e-4645-838b-fc704e5eca36","Token":"","UserId":0,"Phone":""}}
+2022-04-20T14:51:38.416+0800	DEBUG	muma/user.go:98	Login Success	{"Config": {"username":"18990790314","password":"Thr000625"}, "State": 2, "UUID": "e6ed4dc1-041e-4645-838b-fc704e5eca36", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxODk5MDc5MDMxNCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM3NDk4LCJleHAiOjE2NTEwNDIyOTh9._riq6w0McWLXqgKHCjd1x4_rUIplS44bE55fwqN_D30", "UserId": 0, "Phone": ""}
+2022-04-20T14:52:53.636+0800	ERROR	muma/user.go:338	CourseRecordInfo Failed	{"Config": {"username":"18990790314","password":"Thr000625"}, "State": 2, "UUID": "e6ed4dc1-041e-4645-838b-fc704e5eca36", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxODk5MDc5MDMxNCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM3NDk4LCJleHAiOjE2NTEwNDIyOTh9._riq6w0McWLXqgKHCjd1x4_rUIplS44bE55fwqN_D30", "UserId": 0, "Phone": "", "err": {"Offset":1}}
+muma.(*User).CourseRecordInfo
+	c:/Users/const/Desktop/muma/user.go:338
+main.main
+	c:/Users/const/Desktop/muma/main/main.go:30
+runtime.main
+	C:/Users/const/scoop/apps/go/current/src/runtime/proc.go:255
+2022-04-20T14:52:53.636+0800	DEBUG	main/main.go:31	scCourseRecordInfo	{"scCourseRecordInfo": null}
+2022-04-20T14:52:53.828+0800	DEBUG	muma/user.go:493	LoginOut Success	{"id": "e6ed4dc1-041e-4645-838b-fc704e5eca36", "SCLoginOut": {"code":200,"msg":"success","data":null}}
+2022-04-20T14:55:34.255+0800	DEBUG	main/main.go:27	user	{"user": {"Config":{"username":"18990790314","password":"Thr000625"},"State":0,"UUID":"e0974433-8f86-4564-a99a-a24b9a5bc0c8","Token":"","UserId":0,"Phone":""}}
+2022-04-20T14:55:34.627+0800	DEBUG	muma/user.go:98	Login Success	{"Config": {"username":"18990790314","password":"Thr000625"}, "State": 2, "UUID": "e0974433-8f86-4564-a99a-a24b9a5bc0c8", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxODk5MDc5MDMxNCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM3NzM0LCJleHAiOjE2NTEwNDI1MzR9.x9Z-mnuTTn7rgsijqKUWFu5sTasxcpQn8x4aE7IJiuI", "UserId": 0, "Phone": ""}
+2022-04-20T14:55:37.465+0800	ERROR	muma/user.go:339	CourseRecordInfo Failed	{"Config": {"username":"18990790314","password":"Thr000625"}, "State": 2, "UUID": "e0974433-8f86-4564-a99a-a24b9a5bc0c8", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxODk5MDc5MDMxNCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM3NzM0LCJleHAiOjE2NTEwNDI1MzR9.x9Z-mnuTTn7rgsijqKUWFu5sTasxcpQn8x4aE7IJiuI", "UserId": 0, "Phone": "", "err": {"Offset":1}}
+muma.(*User).CourseRecordInfo
+	c:/Users/const/Desktop/muma/user.go:339
+main.main
+	c:/Users/const/Desktop/muma/main/main.go:30
+runtime.main
+	C:/Users/const/scoop/apps/go/current/src/runtime/proc.go:255
+2022-04-20T14:55:41.309+0800	DEBUG	main/main.go:31	scCourseRecordInfo	{"scCourseRecordInfo": null}
+2022-04-20T14:55:42.302+0800	DEBUG	muma/user.go:494	LoginOut Success	{"id": "e0974433-8f86-4564-a99a-a24b9a5bc0c8", "SCLoginOut": {"code":200,"msg":"success","data":null}}
+2022-04-20T14:59:45.734+0800	DEBUG	main/main.go:27	user	{"user": {"Config":{"username":"18990790314","password":"Thr000625"},"State":0,"UUID":"e2b4edcc-f821-41f3-84ce-356ad00ab9b4","Token":"","UserId":0,"Phone":""}}
+2022-04-20T14:59:46.103+0800	DEBUG	muma/user.go:98	Login Success	{"Config": {"username":"18990790314","password":"Thr000625"}, "State": 2, "UUID": "e2b4edcc-f821-41f3-84ce-356ad00ab9b4", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxODk5MDc5MDMxNCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM3OTg1LCJleHAiOjE2NTEwNDI3ODV9.7lR4UkQ2j6MdNFb-3OvZaAiHfIfQ_2Lrc1zM1nGbrbM", "UserId": 0, "Phone": ""}
+2022-04-20T15:00:48.881+0800	ERROR	muma/user.go:339	CourseRecordInfo Failed	{"Config": {"username":"18990790314","password":"Thr000625"}, "State": 2, "UUID": "e2b4edcc-f821-41f3-84ce-356ad00ab9b4", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxODk5MDc5MDMxNCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM3OTg1LCJleHAiOjE2NTEwNDI3ODV9.7lR4UkQ2j6MdNFb-3OvZaAiHfIfQ_2Lrc1zM1nGbrbM", "UserId": 0, "Phone": "", "err": {"Offset":1}}
+muma.(*User).CourseRecordInfo
+	c:/Users/const/Desktop/muma/user.go:339
+main.main
+	c:/Users/const/Desktop/muma/main/main.go:30
+runtime.main
+	C:/Users/const/scoop/apps/go/current/src/runtime/proc.go:255
+2022-04-20T15:00:48.881+0800	DEBUG	main/main.go:31	scCourseRecordInfo	{"scCourseRecordInfo": null}
+2022-04-20T15:00:49.076+0800	DEBUG	muma/user.go:494	LoginOut Success	{"id": "e2b4edcc-f821-41f3-84ce-356ad00ab9b4", "SCLoginOut": {"code":200,"msg":"success","data":null}}
+2022-04-20T15:00:57.535+0800	DEBUG	main/main.go:27	user	{"user": {"Config":{"username":"18990790314","password":"Thr000625"},"State":0,"UUID":"154f357c-73ba-4823-bbdf-9583f4d663f7","Token":"","UserId":0,"Phone":""}}
+2022-04-20T15:00:57.915+0800	DEBUG	muma/user.go:98	Login Success	{"Config": {"username":"18990790314","password":"Thr000625"}, "State": 2, "UUID": "154f357c-73ba-4823-bbdf-9583f4d663f7", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxODk5MDc5MDMxNCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM4MDU3LCJleHAiOjE2NTEwNDI4NTd9.pdQYVPwXFGqKLvI0jQPwyujDxAtP3z-bEp2Voj73Gl8", "UserId": 0, "Phone": ""}
+2022-04-20T15:03:15.400+0800	ERROR	muma/user.go:339	CourseRecordInfo Failed	{"Config": {"username":"18990790314","password":"Thr000625"}, "State": 2, "UUID": "154f357c-73ba-4823-bbdf-9583f4d663f7", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxODk5MDc5MDMxNCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM4MDU3LCJleHAiOjE2NTEwNDI4NTd9.pdQYVPwXFGqKLvI0jQPwyujDxAtP3z-bEp2Voj73Gl8", "UserId": 0, "Phone": "", "err": {"Offset":1}}
+muma.(*User).CourseRecordInfo
+	c:/Users/const/Desktop/muma/user.go:339
+main.main
+	c:/Users/const/Desktop/muma/main/main.go:30
+runtime.main
+	C:/Users/const/scoop/apps/go/current/src/runtime/proc.go:255
+2022-04-20T15:03:15.408+0800	DEBUG	main/main.go:31	scCourseRecordInfo	{"scCourseRecordInfo": null}
+2022-04-20T15:03:15.620+0800	DEBUG	muma/user.go:494	LoginOut Success	{"id": "154f357c-73ba-4823-bbdf-9583f4d663f7", "SCLoginOut": {"code":200,"msg":"success","data":null}}
+2022-04-20T15:03:24.940+0800	DEBUG	main/main.go:27	user	{"user": {"Config":{"username":"18990790314","password":"Thr000625"},"State":0,"UUID":"24911230-b252-42b6-896e-eb189bb17e7e","Token":"","UserId":0,"Phone":""}}
+2022-04-20T15:04:56.522+0800	DEBUG	muma/user.go:98	Login Success	{"Config": {"username":"18990790314","password":"Thr000625"}, "State": 2, "UUID": "24911230-b252-42b6-896e-eb189bb17e7e", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxODk5MDc5MDMxNCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM4MjIzLCJleHAiOjE2NTEwNDMwMjN9.pr2MTNjXm7DL0b37hUmrTJP_lDSWGSTFEpP3iofXKeo", "UserId": 0, "Phone": ""}
+2022-04-20T15:05:01.130+0800	ERROR	muma/user.go:339	CourseRecordInfo Failed	{"Config": {"username":"18990790314","password":"Thr000625"}, "State": 2, "UUID": "24911230-b252-42b6-896e-eb189bb17e7e", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxODk5MDc5MDMxNCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM4MjIzLCJleHAiOjE2NTEwNDMwMjN9.pr2MTNjXm7DL0b37hUmrTJP_lDSWGSTFEpP3iofXKeo", "UserId": 0, "Phone": "", "err": {"Offset":1}}
+muma.(*User).CourseRecordInfo
+	c:/Users/const/Desktop/muma/user.go:339
+main.main
+	c:/Users/const/Desktop/muma/main/main.go:30
+runtime.main
+	C:/Users/const/scoop/apps/go/current/src/runtime/proc.go:255
+2022-04-20T15:05:01.130+0800	DEBUG	main/main.go:31	scCourseRecordInfo	{"scCourseRecordInfo": null}
+2022-04-20T15:05:01.321+0800	DEBUG	muma/user.go:494	LoginOut Success	{"id": "24911230-b252-42b6-896e-eb189bb17e7e", "SCLoginOut": {"code":200,"msg":"success","data":null}}
+2022-04-20T15:07:34.378+0800	DEBUG	main/main.go:27	user	{"user": {"Config":{"username":"18990790314","password":"Thr000625"},"State":0,"UUID":"69488ed1-c456-405f-a10f-2b83e1140d33","Token":"","UserId":0,"Phone":""}}
+2022-04-20T15:08:06.914+0800	DEBUG	muma/user.go:98	Login Success	{"Config": {"username":"18990790314","password":"Thr000625"}, "State": 2, "UUID": "69488ed1-c456-405f-a10f-2b83e1140d33", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxODk5MDc5MDMxNCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM4NDY5LCJleHAiOjE2NTEwNDMyNjl9.FxK0MIgT92fae7J8MM6gcPp_vCRKhv1Z_fgshHzGZ6g", "UserId": 0, "Phone": ""}
+2022-04-20T15:22:00.878+0800	ERROR	muma/user.go:339	CourseRecordInfo Failed	{"Config": {"username":"18990790314","password":"Thr000625"}, "State": 2, "UUID": "69488ed1-c456-405f-a10f-2b83e1140d33", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxODk5MDc5MDMxNCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM4NDY5LCJleHAiOjE2NTEwNDMyNjl9.FxK0MIgT92fae7J8MM6gcPp_vCRKhv1Z_fgshHzGZ6g", "UserId": 0, "Phone": "", "err": {"Offset":1}}
+muma.(*User).CourseRecordInfo
+	c:/Users/const/Desktop/muma/user.go:339
+main.main
+	c:/Users/const/Desktop/muma/main/main.go:30
+runtime.main
+	C:/Users/const/scoop/apps/go/current/src/runtime/proc.go:255
+2022-04-20T15:22:00.879+0800	DEBUG	main/main.go:31	scCourseRecordInfo	{"scCourseRecordInfo": null}
+2022-04-20T15:22:01.084+0800	DEBUG	muma/user.go:494	LoginOut Success	{"id": "69488ed1-c456-405f-a10f-2b83e1140d33", "SCLoginOut": {"code":1100009,"msg":"异地登录，强制下线","data":null}}
+2022-04-20T15:22:06.455+0800	DEBUG	main/main.go:27	user	{"user": {"Config":{"username":"18990790314","password":"Thr000625"},"State":0,"UUID":"97414ad2-2843-4054-96da-18a3472b4bd6","Token":"","UserId":0,"Phone":""}}
+2022-04-20T15:22:07.359+0800	DEBUG	muma/user.go:98	Login Success	{"Config": {"username":"18990790314","password":"Thr000625"}, "State": 2, "UUID": "97414ad2-2843-4054-96da-18a3472b4bd6", "Token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxODk5MDc5MDMxNCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL21ta3QuY29tIiwiaWF0IjoxNjUwNDM5MzI3LCJleHAiOjE2NTEwNDQxMjd9.LjMUfGIuBfwyjduF7O2wK08oFQ0X6njS2zCYIcSpX-M", "UserId": 0, "Phone": ""}
+2022-04-20T15:22:07.968+0800	DEBUG	muma/user.go:343	CourseRecordInfo Success	{"id": "97414ad2-2843-4054-96da-18a3472b4bd6", "SCCourseRecordInfo": {"total":6,"list":[{"id":1183,"courseName":"2022大学英语","teacherId":null,"teacherName":null,"teacherHeadImage":null,"teacherDesc":null,"teacherRemark":null,"teacherurl":null,"collegeId":null,"collegeName":null,"score":null,"imageUrl":"https://oss.muma.com/mmkt-file/aGMZzBsskR5ThP7aKYJFF3TGGndkdc.jpg","tags":null,"summary":null,"duration":null,"description":null,"appDescription":null,"recommend":null,"grounding":1,"state":3,"createTime":"2021-12-08 09:33:22","createUser":null,"updateTime":null,"updateUser":null,"status":1,"liked":null,"share":null,"learned":null,"totalSubject":188,"progress":null,"progressRatio":null,"courseScore":null,"like":null,"categoryName":null,"dateSize":null,"join":null,"detailList":null,"useClassList":[],"classCoursePermissionCount":null,"classCoursePermission":null,"totalTime":null,"totalCount":null,"categories":null},{"id":1197,"courseName":"大学语文","teacherId":null,"teacherName":null,"teacherHeadImage":null,"teacherDesc":null,"teacherRemark":null,"teacherurl":null,"collegeId":null,"collegeName":null,"score":null,"imageUrl":"https://oss.muma.com/mmkt-file/FSRTE63j87AN8dae6pJjsStkwsKCe3.jpg","tags":null,"summary":null,"duration":null,"description":null,"appDescription":null,"recommend":null,"grounding":1,"state":3,"createTime":"2021-12-17 17:54:35","createUser":null,"updateTime":null,"updateUser":null,"status":1,"liked":null,"share":null,"learned":null,"totalSubject":26,"progress":null,"progressRatio":null,"courseScore":null,"like":null,"categoryName":null,"dateSize":null,"join":null,"detailList":null,"useClassList":[],"classCoursePermissionCount":null,"classCoursePermission":null,"totalTime":null,"totalCount":null,"categories":null},{"id":1198,"courseName":"2022大学计算机基础","teacherId":null,"teacherName":null,"teacherHeadImage":null,"teacherDesc":null,"teacherRemark":null,"teacherurl":null,"collegeId":null,"collegeName":null,"score":null,"imageUrl":"https://oss.muma.com/mmkt-file/BWpe7XJbQTAxjGGE4yz5ZTiXaiSTRi.jpg","tags":null,"summary":null,"duration":null,"description":null,"appDescription":null,"recommend":null,"grounding":1,"state":3,"createTime":"2022-01-14 15:23:08","createUser":null,"updateTime":null,"updateUser":null,"status":1,"liked":null,"share":null,"learned":null,"totalSubject":24,"progress":null,"progressRatio":null,"courseScore":null,"like":null,"categoryName":null,"dateSize":null,"join":null,"detailList":null,"useClassList":[],"classCoursePermissionCount":null,"classCoursePermission":null,"totalTime":null,"totalCount":null,"categories":null},{"id":1193,"courseName":"高等数学","teacherId":null,"teacherName":null,"teacherHeadImage":null,"teacherDesc":null,"teacherRemark":null,"teacherurl":null,"collegeId":null,"collegeName":null,"score":null,"imageUrl":"https://oss.muma.com/mmkt-file/SshxXfjT2CGzFK3Tc4XAbdcmTpAMX3.jpg","tags":null,"summary":null,"duration":null,"description":null,"appDescription":null,"recommend":null,"grounding":1,"state":3,"createTime":"2021-12-08 09:33:22","createUser":null,"updateTime":null,"updateUser":null,"status":1,"liked":null,"share":null,"learned":null,"totalSubject":23,"progress":null,"progressRatio":null,"courseScore":null,"like":null,"categoryName":null,"dateSize":null,"join":null,"detailList":null,"useClassList":[],"classCoursePermissionCount":null,"classCoursePermission":null,"totalTime":null,"totalCount":null,"categories":null},{"id":1058,"courseName":"英语听力","teacherId":null,"teacherName":null,"teacherHeadImage":null,"teacherDesc":null,"teacherRemark":null,"teacherurl":null,"collegeId":null,"collegeName":null,"score":null,"imageUrl":"https://oss.muma.com/mmkt-file/yRNRxWdx27HQwJfA3JycKj5cHRZQC5.jpg","tags":null,"summary":null,"duration":null,"description":null,"appDescription":null,"recommend":null,"grounding":1,"state":3,"createTime":"2022-01-19 09:23:21","createUser":null,"updateTime":null,"updateUser":null,"status":1,"liked":null,"share":null,"learned":null,"totalSubject":11,"progress":null,"progressRatio":null,"courseScore":null,"like":null,"categoryName":null,"dateSize":null,"join":null,"detailList":null,"useClassList":[],"classCoursePermissionCount":null,"classCoursePermission":null,"totalTime":null,"totalCount":null,"categories":null},{"id":1063,"courseName":"英美概况","teacherId":null,"teacherName":null,"teacherHeadImage":null,"teacherDesc":null,"teacherRemark":null,"teacherurl":null,"collegeId":null,"collegeName":null,"score":null,"imageUrl":"https://oss.muma.com/mmkt-file/HCFt6wEzZJPrixd7jARYJQa2EzYKkx.jpg","tags":null,"summary":null,"duration":null,"description":null,"appDescription":null,"recommend":null,"grounding":1,"state":3,"createTime":"2022-01-19 09:22:11","createUser":null,"updateTime":null,"updateUser":null,"status":1,"liked":null,"share":null,"learned":null,"totalSubject":8,"progress":null,"progressRatio":null,"courseScore":null,"like":null,"categoryName":null,"dateSize":null,"join":null,"detailList":null,"useClassList":[],"classCoursePermissionCount":null,"classCoursePermission":null,"totalTime":null,"totalCount":null,"categories":null}],"pageNum":1,"pageSize":10,"size":6,"startRow":1,"endRow":6,"pages":1,"prePage":0,"nextPage":0,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1],"navigateFirstPage":1,"navigateLastPage":1}}

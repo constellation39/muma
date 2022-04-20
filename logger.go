@@ -15,7 +15,7 @@ func init() {
 
 	cfg := zap.Config{
 		Level:            zap.NewAtomicLevelAt(zapcore.Level(zapcore.DebugLevel)),
-		Development:      config.Debug,
+		Development:      true,
 		Encoding:         "json",
 		EncoderConfig:    zap.NewDevelopmentEncoderConfig(),
 		OutputPaths:      []string{"log/debug.log"},
@@ -42,7 +42,7 @@ func ExitsFile(path string) {
 		return
 	}
 
-	err = os.MkdirAll("log", os.ModeDir)
+	err = os.MkdirAll(path, os.ModeDir)
 
 	if err != nil {
 		panic(err)

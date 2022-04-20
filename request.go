@@ -18,19 +18,19 @@ type Request struct {
 	rwMutex sync.RWMutex
 }
 
-func NewRequest(host string) *Request {
+func newRequest(host string) *Request {
 	jar, _ := cookiejar.New(nil)
 	request := &Request{
 		Host:   host,
 		header: http.Header{},
 		client: http.Client{
 			Jar:     jar,
-			Timeout: time.Second * time.Duration(config.TimeOut),
+			Timeout: time.Second * 5,
 		},
 	}
 	request.AddHeader("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44")
 	request.AddHeader("accept", "application/json, text/plain, */*")
-	request.AddHeader("accept-encoding", "gzip, deflate, br")
+	// request.AddHeader("accept-encoding", "gzip, deflate, br")
 	request.AddHeader("accept-language", "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6")
 	request.AddHeader("cache-control", "no-cache")
 	request.AddHeader("content-type", "application/json;charset=UTF-8")

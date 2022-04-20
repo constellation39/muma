@@ -9,34 +9,50 @@ import (
 	"go.uber.org/zap"
 )
 
-type User struct {
-	*Request
-	*Config
+const (
+	Ready = iota
+	Login
+	Idle
+	Look
+	Close
+)
 
+type User struct {
+	request *Request
+	Config  *UserConfig
+
+	State int
 	UUID  string
 	Token string
 
-	UserId   int
-	Phone    string
-	CourseId int
+	UserId int
+	Phone  string
 }
 
 func (user *User) Fields() []zap.Field {
 	return []zap.Field{
+		zap.Reflect("Config", user.Config),
+		zap.Int("State", user.State),
 		zap.String("UUID", user.UUID),
 		zap.String("Token", user.Token),
 		zap.Int("UserId", user.UserId),
 		zap.String("Phone", user.Phone),
-		zap.Int("CourseId", user.CourseId),
 	}
 }
 
-func NewUser(config *Config) *User {
+func NewUser(path string) (*User, error) {
+	config := new(UserConfig)
+
+	if err := LoadConfig(path, config); err != nil {
+		return nil, err
+	}
+
 	return &User{
-		Request: NewRequest(config.Host),
+		State:   Ready,
+		request: newRequest(GlobalConfig.Host),
 		Config:  config,
 		UUID:    uuid.NewString(),
-	}
+	}, nil
 }
 
 type CSLogin struct {
@@ -57,7 +73,8 @@ type LoginEquipment struct {
 
 // Login 登录
 func (user *User) Login() bool {
-	body, err := user.Post("web-gateway/token", CSLogin{
+	user.State = Login
+	body, err := user.request.Post("web-gateway/token", CSLogin{
 		Equipment: LoginEquipment{
 			DeviceBrand:            "Chrome",
 			DeviceModel:            fmt.Sprintf("100.0.%d.127", 4000+rand.Intn(2000)),
@@ -67,16 +84,17 @@ func (user *User) Login() bool {
 			ResolutionWidth:        1080,
 			ServiceProvider:        "",
 		},
-		UserName: user.Username,
-		Password: user.Password,
+		UserName: user.Config.Username,
+		Password: user.Config.Password,
 	})
 	if err != nil {
 		Logger.Error("Login", append(user.Fields(), zap.Reflect("err", err))...)
 		return false
 	}
 	token := fmt.Sprintf("Bearer %s", body)
-	user.Token = token
-	user.SetHeader("authorization", token)
+	user.State = Idle
+	user.Token = string(body)
+	user.request.SetHeader("authorization", token)
 	Logger.Debug("Login Success", user.Fields()...)
 	return true
 }
@@ -95,7 +113,7 @@ type SCRecentlyWorkData struct {
 
 // RecentlyWork 最近工作
 func (user *User) RecentlyWork() bool {
-	body, err := user.Get("web-gateway/t/student/recently-work")
+	body, err := user.request.Get("web-gateway/t/student/recently-work")
 	if err != nil {
 		Logger.Error("RecentlyWork Failed", append(user.Fields(), zap.Reflect("err", err))...)
 		return false
@@ -178,7 +196,7 @@ type UserCollegeInfoDTO struct {
 
 // UserInfo 用户信息
 func (user *User) UserInfo() bool {
-	body, err := user.Get("web-gateway/user/userInfo")
+	body, err := user.request.Get("web-gateway/user/userInfo")
 	if err != nil {
 		Logger.Error("UserInfo Failed", append(user.Fields(), zap.Reflect("err", err))...)
 		return false
@@ -203,7 +221,7 @@ type SCInstructorCheck struct {
 
 // UserInfo 辅导员信息检查
 func (user *User) InstructorCheck() bool {
-	body, err := user.Get(fmt.Sprintf("web-gateway/instructor/instructor-check?userId=%d", user.UserId))
+	body, err := user.request.Get(fmt.Sprintf("web-gateway/instructor/instructor-check?userId=%d", user.UserId))
 	if err != nil {
 		Logger.Error("InstructorCheck Failed", append(user.Fields(), zap.Reflect("err", err))...)
 		return false
@@ -226,7 +244,7 @@ type SCGetUserStatus struct {
 
 // GetUserStatus 获取用户状态
 func (user *User) GetUserStatus() bool {
-	body, err := user.Get(fmt.Sprintf("web-gateway/teacherAbnormalBehavior/getUserStatus?name=%s", user.Phone))
+	body, err := user.request.Get(fmt.Sprintf("web-gateway/teacherAbnormalBehavior/getUserStatus?name=%s", user.Phone))
 	if err != nil {
 		Logger.Error("GetUserStatus Failed", append(user.Fields(), zap.Reflect("err", err))...)
 		return false
@@ -308,20 +326,22 @@ type List struct {
 }
 
 // GetUserStatus 获取用户所有的课程
-func (user *User) CourseRecordInfo() bool {
-	body, err := user.Get("web-gateway/course/courseRecordInfo?pageSize=10&pageNum=1&total=0&orderBy=1&type=1")
+func (user *User) CourseRecordInfo() (*SCCourseRecordInfo, bool) {
+	body, err := user.request.Get("web-gateway/course/courseRecordInfo?pageSize=10&pageNum=1&total=0&orderBy=1&type=1")
 	if err != nil {
 		Logger.Error("CourseRecordInfo Failed", append(user.Fields(), zap.Reflect("err", err))...)
-		return false
+		return nil, false
 	}
+	print(string(body))
 	scCourseRecordInfo := new(SCCourseRecordInfo)
 	err = json.Unmarshal(body, scCourseRecordInfo)
 	if err != nil {
 		Logger.Error("CourseRecordInfo Failed", append(user.Fields(), zap.Reflect("err", err))...)
-		return false
+		return nil, false
 	}
+	user.State = Look
 	Logger.Debug("CourseRecordInfo Success", zap.String("id", user.UUID), zap.Reflect("SCCourseRecordInfo", scCourseRecordInfo))
-	return true
+	return scCourseRecordInfo, true
 }
 
 type SCAuthorization struct {
@@ -332,7 +352,7 @@ type SCAuthorization struct {
 
 // Authorization 验证用户能否学习该视频
 func (user *User) Authorization(courseId int) bool {
-	body, err := user.Get(fmt.Sprintf("web-gateway/course-permission/user/authorization?courseId=%d&userId=%d", courseId, user.UserId))
+	body, err := user.request.Get(fmt.Sprintf("web-gateway/course-permission/user/authorization?courseId=%d&userId=%d", courseId, user.UserId))
 	if err != nil {
 		Logger.Error("Authorization Failed", append(user.Fields(), zap.Reflect("err", err))...)
 		return false
@@ -404,7 +424,7 @@ type SubjectDTOList struct {
 
 // CourseDetail 获得目标课程的详细章节
 func (user *User) CourseDetail(courseId int) bool {
-	body, err := user.Get(fmt.Sprintf("web-gateway/course/courseDetail?courseId=%d", courseId))
+	body, err := user.request.Get(fmt.Sprintf("web-gateway/course/courseDetail?courseId=%d", courseId))
 	if err != nil {
 		Logger.Error("CourseDetail Failed", append(user.Fields(), zap.Reflect("err", err))...)
 		return false
@@ -433,7 +453,7 @@ type SCLearnedVideo struct {
 
 // LearnedVideo 学习这个视频
 func (user *User) LearnedVideo(courseID int, subjectID string, videoID int) bool {
-	body, err := user.Post("web-gateway/user/learnedVideo", CSLearnedVideo{
+	body, err := user.request.Post("web-gateway/user/learnedVideo", CSLearnedVideo{
 		CourseID:  courseID,
 		SubjectID: subjectID,
 		VideoID:   videoID,
@@ -460,7 +480,7 @@ type SCLoginOut struct {
 
 // LoginOut 登出
 func (user *User) LoginOut() bool {
-	body, err := user.Get("web-gateway/user/loginOut")
+	body, err := user.request.Get("web-gateway/user/loginOut")
 	if err != nil {
 		Logger.Error("LoginOut Failed", append(user.Fields(), zap.Reflect("err", err))...)
 		return false
