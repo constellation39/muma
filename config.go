@@ -9,6 +9,7 @@ import (
 
 // Config 只读线程安全
 type globalConfig struct {
+	Speed      int    `json:"speed"`
 	Debug      bool   `json:"debug"`
 	Log        int    `json:"log"`
 	Host       string `json:"host"`

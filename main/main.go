@@ -2,6 +2,8 @@ package main
 
 import (
 	"muma"
+	"strings"
+	"time"
 
 	"go.uber.org/zap"
 )
@@ -9,6 +11,15 @@ import (
 var users map[string]*muma.User
 var names map[string]string
 var logger *zap.Logger
+
+type Target struct {
+	Title     string `json:"title"`
+	CourseId  int    `json:"course_id"`
+	SubjectId int    `json:"subject_id"`
+	VideoId   int    `json:"video_Id"`
+	Duration  int    `json:"_duration"`
+	Enable    bool   `json:"enable"`
+}
 
 func init() {
 	logger = muma.Logger
@@ -27,13 +38,74 @@ func main() {
 	logger.Debug("user", zap.Reflect("user", user))
 
 	user.Login()
-	scCourseRecordInfo, _ := user.CourseRecordInfo()
+	scCourseRecordInfo, ok := user.CourseRecordInfo()
 
-	for _, course := range scCourseRecordInfo.List {
-
+	if !ok {
+		return
 	}
 
-	logger.Debug("scCourseRecordInfo", zap.Reflect("scCourseRecordInfo", scCourseRecordInfo))
+	targets := make([]*Target, 0)
+	for _, courseRecordInfo := range scCourseRecordInfo.List {
+		titles := []string{courseRecordInfo.CourseName}
+		scCourseDetail, ok := user.CourseDetail(courseRecordInfo.ID)
+		if !ok {
+			continue
+		}
+		for _, detail := range *scCourseDetail {
+			titles = append(titles, detail.Name)
+			for _, dtoList := range detail.SubjectDTOList {
+				titles = append(titles, dtoList.Name)
+			pointLoop:
+				for _, point := range dtoList.SubjectPointList {
+					for _, video := range point.PointVideos {
+						if video.IsLearning {
+							continue pointLoop
+						}
+					}
+					titles = append(titles, point.Name)
+					targets = append(targets, &Target{
+						Title:     strings.Join(titles, "-"),
+						CourseId:  detail.CourseID,
+						SubjectId: point.SubjectID,
+						VideoId:   point.VideoID,
+						Duration:  point.Duration,
+						Enable:    true,
+					})
+					if len(titles) != 0 {
+						titles = titles[:len(titles)-1]
+					}
+				}
+				if len(titles) != 0 {
+					titles = titles[:len(titles)-1]
+				}
+			}
+			if len(titles) != 0 {
+				titles = titles[:len(titles)-1]
+			}
+		}
+		if len(titles) != 0 {
+			titles = titles[:len(titles)-1]
+		}
+		time.Sleep(time.Second * 2)
+	}
+
+	target := targets[0]
+	for len(targets) > 0 {
+		target.Duration -= muma.GlobalConfig.Speed
+
+		if target.Duration <= 0 {
+			user.LearnedVideo(target.CourseId, target.SubjectId, target.VideoId)
+			if len(targets) != 0 {
+				targets = targets[1:]
+				target = targets[0]
+			}
+			logger.Debug("LearnedVideo", zap.String("Title", target.Title), zap.Int("Duration", target.Duration))
+			continue
+		}
+
+		logger.Debug("Video...", zap.String("Title", target.Title), zap.Int("Duration", target.Duration))
+		time.Sleep(time.Second)
+	}
 
 	defer user.LoginOut()
 }

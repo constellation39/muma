@@ -124,7 +124,7 @@ func (user *User) RecentlyWork() bool {
 		Logger.Error("RecentlyWork Failed", append(user.Fields(), zap.Reflect("err", err))...)
 		return false
 	}
-	Logger.Debug("RecentlyWork Success", zap.String("id", user.UUID), zap.Reflect("SCRecentlyWork", scRecentlyWork))
+	Logger.Debug("RecentlyWork Success", zap.String("id", user.UUID))
 	return true
 }
 
@@ -209,7 +209,7 @@ func (user *User) UserInfo() bool {
 	}
 	user.UserId = scUserInfo.UserBaseDetailInfoDTO.ID
 	user.Phone = scUserInfo.UserBaseDetailInfoDTO.Phone
-	Logger.Debug("UserInfo Success", zap.String("id", user.UUID), zap.Reflect("SCUserInfo", scUserInfo))
+	Logger.Debug("UserInfo Success", zap.String("id", user.UUID))
 	return true
 }
 
@@ -232,7 +232,7 @@ func (user *User) InstructorCheck() bool {
 		Logger.Error("InstructorCheck Failed", append(user.Fields(), zap.Reflect("err", err))...)
 		return false
 	}
-	Logger.Debug("InstructorCheck Success", zap.String("id", user.UUID), zap.Reflect("SCInstructorCheck", scInstructorCheck))
+	Logger.Debug("InstructorCheck Success", zap.String("id", user.UUID))
 	return true
 }
 
@@ -255,7 +255,7 @@ func (user *User) GetUserStatus() bool {
 		Logger.Error("GetUserStatus Failed", append(user.Fields(), zap.Reflect("err", err))...)
 		return false
 	}
-	Logger.Debug("GetUserStatus Success", zap.String("id", user.UUID), zap.Reflect("SCGetUserStatus", scGetUserStatus))
+	Logger.Debug("GetUserStatus Success", zap.String("id", user.UUID))
 	return true
 }
 
@@ -332,7 +332,6 @@ func (user *User) CourseRecordInfo() (*SCCourseRecordInfo, bool) {
 		Logger.Error("CourseRecordInfo Failed", append(user.Fields(), zap.Reflect("err", err))...)
 		return nil, false
 	}
-	print(string(body))
 	scCourseRecordInfo := new(SCCourseRecordInfo)
 	err = json.Unmarshal(body, scCourseRecordInfo)
 	if err != nil {
@@ -340,7 +339,7 @@ func (user *User) CourseRecordInfo() (*SCCourseRecordInfo, bool) {
 		return nil, false
 	}
 	user.State = Look
-	Logger.Debug("CourseRecordInfo Success", zap.String("id", user.UUID), zap.Reflect("SCCourseRecordInfo", scCourseRecordInfo))
+	Logger.Debug("CourseRecordInfo Success", zap.String("id", user.UUID))
 	return scCourseRecordInfo, true
 }
 
@@ -363,7 +362,7 @@ func (user *User) Authorization(courseId int) bool {
 		Logger.Error("Authorization Failed", append(user.Fields(), zap.Reflect("err", err))...)
 		return false
 	}
-	Logger.Debug("Authorization Success", zap.String("id", user.UUID), zap.Reflect("SCAuthorization", scAuthorization))
+	Logger.Debug("Authorization Success", zap.String("id", user.UUID))
 	return true
 }
 
@@ -423,26 +422,26 @@ type SubjectDTOList struct {
 }
 
 // CourseDetail 获得目标课程的详细章节
-func (user *User) CourseDetail(courseId int) bool {
+func (user *User) CourseDetail(courseId int) (*SCCourseDetail, bool) {
 	body, err := user.request.Get(fmt.Sprintf("web-gateway/course/courseDetail?courseId=%d", courseId))
 	if err != nil {
 		Logger.Error("CourseDetail Failed", append(user.Fields(), zap.Reflect("err", err))...)
-		return false
+		return nil, false
 	}
 	scCourseDetail := new(SCCourseDetail)
 	err = json.Unmarshal(body, scCourseDetail)
 	if err != nil {
 		Logger.Error("CourseDetail Failed", append(user.Fields(), zap.Reflect("err", err))...)
-		return false
+		return nil, false
 	}
-	Logger.Debug("CourseDetail Success", zap.String("id", user.UUID), zap.Reflect("SCCourseDetail", scCourseDetail))
-	return true
+	Logger.Debug("CourseDetail Success", zap.String("id", user.UUID))
+	return scCourseDetail, true
 }
 
 type CSLearnedVideo struct {
-	CourseID  int    `json:"courseId"`
-	SubjectID string `json:"subjectId"`
-	VideoID   int    `json:"videoId"`
+	CourseID  int `json:"courseId"`
+	SubjectID int `json:"subjectId"`
+	VideoID   int `json:"videoId"`
 }
 
 type SCLearnedVideo struct {
@@ -452,7 +451,7 @@ type SCLearnedVideo struct {
 }
 
 // LearnedVideo 学习这个视频
-func (user *User) LearnedVideo(courseID int, subjectID string, videoID int) bool {
+func (user *User) LearnedVideo(courseID int, subjectID int, videoID int) bool {
 	body, err := user.request.Post("web-gateway/user/learnedVideo", CSLearnedVideo{
 		CourseID:  courseID,
 		SubjectID: subjectID,
@@ -468,7 +467,7 @@ func (user *User) LearnedVideo(courseID int, subjectID string, videoID int) bool
 		Logger.Error("LearnedVideo Failed", append(user.Fields(), zap.Reflect("err", err))...)
 		return false
 	}
-	Logger.Debug("LearnedVideo Success", zap.String("id", user.UUID), zap.Reflect("SCLearnedVideo", scLearnedVideo))
+	Logger.Debug("LearnedVideo Success", zap.String("id", user.UUID))
 	return true
 }
 
@@ -491,6 +490,6 @@ func (user *User) LoginOut() bool {
 		Logger.Error("LoginOut Failed", append(user.Fields(), zap.Reflect("err", err))...)
 		return false
 	}
-	Logger.Debug("LoginOut Success", zap.String("id", user.UUID), zap.Reflect("SCLoginOut", scLoginOut))
+	Logger.Debug("LoginOut Success", zap.String("id", user.UUID))
 	return true
 }
